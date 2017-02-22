@@ -1,0 +1,14 @@
+<App>
+    <DockPanel>
+        <StatusBarBackground Dock="Top" />
+        <ScrollView ClipToBounds="true">
+            <StackPanel>
+                <Text FontSize="30">Hello, world!</Text>
+                <Slider />
+                <Button Text="{buttonText}" Clicked="{onClick}" />
+                <Switch Alignment="Right" />
+            </StackPanel>
+        </ScrollView>
+        <JavaScript File="./out/bundle.js" />
+    </DockPanel>
+</App>

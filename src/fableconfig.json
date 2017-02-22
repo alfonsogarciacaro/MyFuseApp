@@ -1,0 +1,16 @@
+{
+  "sourceMaps": true,
+  "projFile": "test1.fsx",
+  "outDir": "bin",
+  "scripts": {
+    "postbuild": "node ../node_modules/webpack/bin/webpack"
+  },
+  "targets": {
+    "watch": {
+      "watch": true,
+      "scripts": {
+        "postbuild-once": "node ../node_modules/webpack/bin/webpack --watch"
+      }
+    }
+  }
+}

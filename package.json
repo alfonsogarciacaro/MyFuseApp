@@ -1,0 +1,24 @@
+{
+  "name": "test1",
+  "version": "0.0.1",
+  "description": "A Fable-Fuse project",
+  "author": "7sharp9",
+  "license": "Apache-2.0",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "fable ./src/test1.fsx",
+    "watch": "fable ./src/test1.fsx --target watch"
+  },
+  "devDependencies": {
+    "fable-compiler": "^0.7.42",
+    "fable-core": "^0.7.26",
+    "fable-fuse": "^0.0.2",
+    "fable-powerpack": "^0.0.19",
+    "source-map-loader": "^0.1.6",
+    "webpack": "^2.2.1"
+  }
+}

@@ -1,0 +1,5 @@
+.uno/
+node_modules/
+build/
+out/
+src/bin/
