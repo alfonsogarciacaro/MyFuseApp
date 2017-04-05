@@ -1,6 +1,4 @@
-
-#r "../node_modules/fable-core/Fable.Core.dll"
-#load "../node_modules/fable-fuse/Observable.fs"
+module Test
 
 open Fable.Core
 open Fuse
@@ -10,6 +8,5 @@ let mutable clickCount = 0
 let buttonText = Observable.createWith("Button")
 
 let onClick() =
-    printfn "JOJO"
-    clickCount <- clickCount + 1
+    clickCount <- clickCount + 10
     buttonText.value <- "Clicks: " + (string clickCount)

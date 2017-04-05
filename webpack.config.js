@@ -1,0 +1,49 @@
+var path = require("path");
+var webpack = require("webpack");
+
+function resolve(filePath) {
+  return path.join(__dirname, filePath)
+}
+
+var babelOptions = {
+  presets: [["es2015", {"modules": false}]],
+  plugins: ["transform-runtime"]
+}
+
+module.exports = {
+  devtool: "source-map",
+  entry: resolve('./src/MyFuseApp.fsproj'),
+  target: "node",
+  output: {
+    libraryTarget: "commonjs2",
+    filename: 'bundle.js',
+    path: resolve('./out'),
+  },
+  externals: [
+    function(context, request, callback) {
+      if (/^FuseJS/.test(request)){
+        return callback(null, 'commonjs ' + request);
+      }
+      callback();
+    }
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.fs(x|proj)?$/,
+        use: {
+          loader: "fable-loader",
+          options: { babel: babelOptions }
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules[\\\/](?!fable-)/,
+        use: {
+          loader: 'babel-loader',
+          options: babelOptions
+        },
+      }
+    ]
+  }
+};

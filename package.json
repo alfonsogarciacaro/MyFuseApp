@@ -10,15 +10,19 @@
     "url": ""
   },
   "scripts": {
-    "build": "fable ./src/test1.fsx",
-    "watch": "fable ./src/test1.fsx --target watch"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "devDependencies": {
-    "fable-compiler": "^0.7.42",
-    "fable-core": "^0.7.26",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-runtime": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "fable-loader": "^1.0.0-narumi-905",
+    "fable-core": "^1.0.0-narumi-906",
     "fable-fuse": "^0.0.2",
-    "fable-powerpack": "^0.0.19",
-    "source-map-loader": "^0.1.6",
-    "webpack": "^2.2.1"
+    "fable-powerpack": "^1.0.0-narumi-3",
+    "webpack": "^2.3.3"
   }
 }
